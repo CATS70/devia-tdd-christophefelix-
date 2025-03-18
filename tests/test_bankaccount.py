@@ -4,10 +4,6 @@ from bank_account import bankAccount
 
 
 class TestBankAccount(unittest.TestCase):
-    def test_type_comparison(self):
-        # Test simple pour vérifier le comportement de Python lors de comparaisons de types différents
-        with self.assertRaises(TypeError):
-            result = 1000 >= "test"
 
     def test_acountCreation(self):
         account = bankAccount()
