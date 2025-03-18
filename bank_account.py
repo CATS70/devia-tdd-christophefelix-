@@ -6,6 +6,12 @@ class bankAccount:
 
     def create(self, id, amount):
 
+        if not isinstance(id, str):
+            raise TypeError("id must be of type string")
+
+        if not isinstance(amount, float):
+            raise TypeError("amount must be of type float")
+
         if id !="":
             self.id = id
         else:
