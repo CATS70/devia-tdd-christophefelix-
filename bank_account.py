@@ -29,6 +29,9 @@ class bankAccount:
         self.balance += amount
 
     def withdraw(self, amount):
+        if not isinstance(amount, float) and not isinstance(amount, int):
+            raise TypeError("amount must be of type float or a int")
+
         if self.balance >= amount:
             self.balance -= amount
         else:
