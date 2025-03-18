@@ -17,6 +17,14 @@ class TestBankAccount(unittest.TestCase):
             account = bankAccount()
             account.create("", 1000)
 
+        with self.assertRaises(TypeError):
+            account = bankAccount()
+            account.create(123, 10000)
+
+        with self.assertRaises(TypeError):
+            account = bankAccount()
+            account.create("A2345", "test")
+
     def test_deposit(self):
         account = bankAccount()
         account.create("A2345",1000)
