@@ -9,8 +9,8 @@ class bankAccount:
         if not isinstance(id, str):
             raise TypeError("id must be of type string")
 
-        if not isinstance(amount, float):
-            raise TypeError("amount must be of type float")
+        if not isinstance(amount, float) and not isinstance(amount, int):
+            raise TypeError("amount must be of type float or a int")
 
         if id !="":
             self.id = id
@@ -23,6 +23,9 @@ class bankAccount:
             raise ValueError("Amount must be greater than zero")
 
     def deposit(self, amount):
+        if not isinstance(amount, float) and not isinstance(amount, int):
+            raise TypeError("amount must be of type float or a int")
+
         self.balance += amount
 
     def withdraw(self, amount):
