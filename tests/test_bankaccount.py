@@ -31,6 +31,10 @@ class TestBankAccount(unittest.TestCase):
         account.deposit(100)
         self.assertEqual(account.balance,1100)
 
+        with self.assertRaises(TypeError):
+            account.deposit("test")
+            account.deposit(type(int))
+
     def test_withdraw(self):
         account = bankAccount()
         account.create("A2345",1000)
